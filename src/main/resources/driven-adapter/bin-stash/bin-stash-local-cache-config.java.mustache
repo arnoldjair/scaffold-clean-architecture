@@ -1,18 +1,18 @@
 package {{package}}.binstash.config;
 
-import co.com.bancolombia.binstash.model.api.ObjectCache;
+import {{package}}.binstash.model.api.ObjectCache;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 {{#include-local}}
-import co.com.bancolombia.binstash.LocalCacheFactory;
+import {{package}}.binstash.LocalCacheFactory;
 {{/include-local}}
 {{#include-centralized}}
-import co.com.bancolombia.binstash.CentralizedCacheFactory;
+import {{package}}.binstash.CentralizedCacheFactory;
 {{/include-centralized}}
 {{#include-hybrid}}
-import co.com.bancolombia.binstash.HybridCacheFactory;
-import co.com.bancolombia.binstash.model.SyncRule;
+import {{package}}.binstash.HybridCacheFactory;
+import {{package}}.binstash.model.SyncRule;
 import java.util.Collections;
 import java.util.List;
 {{/include-hybrid}}

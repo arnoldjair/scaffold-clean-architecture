@@ -14,7 +14,7 @@ buildscript {
 }
 
 plugins {
-	id 'co.com.bancolombia.cleanArchitecture' version "${cleanArchitectureVersion}"
+	id '{{package}}.cleanArchitecture' version "${cleanArchitectureVersion}"
     {{#example}}
     id "org.owasp.dependencycheck" version "{{DEPENDENCY_CHECK_VERSION}}" apply false
     {{/example}}

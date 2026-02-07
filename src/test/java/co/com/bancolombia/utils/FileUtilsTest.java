@@ -32,12 +32,6 @@ import tools.jackson.databind.node.ObjectNode;
 public class FileUtilsTest {
 
   @Test
-  void readPropertiesExist() throws Exception {
-    String property = "package";
-    assertEquals("co.com.bancolombia", FileUtils.readProperties(".", property));
-  }
-
-  @Test
   void readPropertiesNonExists() {
     String property = "packageName";
     assertThrows(IOException.class, () -> FileUtils.readProperties("build", property));

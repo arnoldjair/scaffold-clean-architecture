@@ -54,7 +54,7 @@ class ArchitectureTest {
                 .that(new DescribedPredicate<>("is-not-commons-lib") {
                     @Override
                     public boolean test(JavaClass javaClass) {
-                        return !javaClass.getPackageName().contains("co.com.bancolombia.commons.jms");
+                        return !javaClass.getPackageName().contains("{{package}}.commons.jms");
                     }
                 });
         domainClasses = new ClassFileImporter().importPackages("{{package}}.usecase", "{{package}}.model");

@@ -10,7 +10,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import lombok.Getter;
 import org.gradle.api.provider.ListProperty;
+import org.gradle.api.tasks.Input;
 import org.gradle.api.tasks.Internal;
 import org.gradle.api.tasks.options.Option;
 import org.gradle.api.tasks.options.OptionValues;
@@ -19,7 +21,7 @@ import org.gradle.api.tasks.options.OptionValues;
 public class DeleteModuleTask extends AbstractCleanArchitectureDefaultTask {
   private String module;
 
-  @Internal private final ListProperty<String> availableModules;
+  @Getter @Internal private final ListProperty<String> availableModules;
 
   public DeleteModuleTask() {
     this.availableModules = getProject().getObjects().listProperty(String.class);
@@ -58,6 +60,7 @@ public class DeleteModuleTask extends AbstractCleanArchitectureDefaultTask {
     return Optional.of(module);
   }
 
+  @Input
   public List<String> getChildProjectNames() {
     return new ArrayList<>(getProject().getChildProjects().keySet());
   }

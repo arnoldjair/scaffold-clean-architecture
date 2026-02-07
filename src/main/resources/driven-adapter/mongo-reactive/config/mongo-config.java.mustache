@@ -1,8 +1,8 @@
 package {{package}}.mongo.config;
 
 {{#include-secret}}
-import co.com.bancolombia.secretsmanager.api.exceptions.SecretException;
-import co.com.bancolombia.secretsmanager.api.GenericManagerAsync;
+import {{package}}.secretsmanager.api.exceptions.SecretException;
+import {{package}}.secretsmanager.api.GenericManagerAsync;
 {{/include-secret}}
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.mongodb.autoconfigure.MongoConnectionDetails;
